@@ -14,7 +14,7 @@ func TestGetUrl(t *testing.T) {
 	name, err := FindName(s)
 	t.Log(err, name)
 
-	path := "./" + name + "/"
+	path := "./download/" + name + "/"
 	err = DownFile(r, path, "")
 	if err != nil {
 		t.Log(err)
