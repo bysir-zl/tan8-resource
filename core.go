@@ -136,6 +136,10 @@ func FindImage(s string) (images []string, err error) {
 	if err != nil {
 		return
 	}
+	images = []string{}
+	if !bj.IsArr() || bj.Len() == 0 {
+		return
+	}
 	img := bj.Index(0).Pos("img")
 	l := img.Len()
 	images = make([]string, l)

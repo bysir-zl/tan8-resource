@@ -1,14 +1,13 @@
 package tan8
 
 import (
-	"testing"
 	"github.com/bysir-zl/bygo/log"
+	"testing"
 	"time"
 )
 
 func TestGetUrl(t *testing.T) {
-	s := GetMusicPageContent("53142")
-
+	s := GetMusicPageContent("43581")
 	is, err := FindImage(s)
 	t.Log(err, is)
 	r, err := FindMp3(s)
@@ -54,9 +53,9 @@ func TestChan(t *testing.T) {
 		close(c)
 	}()
 
-	for v:=range c{
+	for v := range c {
 		time.Sleep(time.Second * 3)
 
-		log.Info("test",v)
+		log.Info("test", v)
 	}
 }
